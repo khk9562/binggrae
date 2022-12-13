@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width:100px; height: 100px;
+            box-sizing: border-box;
+            background-color: #ccc;
+            color:#333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" data-name="value1">txt1</div>
+    <div class="box" data-name="value2">txt2</div>
+    <div class="box" data-name="value3">txt3</div>
+    <div class="box" data-name="value4">txt4</div>
+    <div class="box" data-name="value5">txt5</div>
+    <div class="box" data-name="value6">txt6</div>
+
+
+    <script>
+
+        let v = document.querySelectorAll('.box');
+        console.log(v);
+
+        // v.forEach(function(item,index) {
+        //     let name = item.getAttribute('data-name');
+        //     let name1 = item.innerHTML;
+        //     console.log(name);
+        //     console.log(name1);
+        // });
+
+        v.forEach(function(e) {
+            let data1 = e.getAttribute('data-name'); // data-name속성값 가져오기
+            let data2 = e.innerHTML; // 내용가져오기
+            e.addEventListener('mouseover',function() {
+                e.innerHTML = data1; // 내용변경하기
+            });
+            e.addEventListener('mouseout',function() {
+                e.innerHTML = data2;
+            });
+        });
+
+    </script>
+</body>
+</html>

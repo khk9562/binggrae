@@ -1,0 +1,190 @@
+<ul class="slide">
+    <li>
+        <img src="/img/sec02_img01.png" alt="">
+        <a href="#" class="s_btn">아이스크림</a>
+    </li>
+    <li>
+        <img src="/img/sec02_img02.png" alt="">
+        <a href="#" class="s_btn">우유/치즈</a>
+        
+    </li>
+    <li>
+        <img src="/img/sec02_img03.png" alt="">
+        <a href="#" class="s_btn">발효유</a>
+
+    </li>
+    <li>
+        <img src="/img/sec02_img04.png" alt="">
+        <a href="#" class="s_btn">커피</a>
+
+    </li>
+    <li>
+        <img src="/img/sec02_img06.png" alt="">
+        <a href="#" class="s_btn">주스</a>
+
+    </li>
+    <li>
+        <img src="/img/sec02_img05.png" alt="">
+        <a href="#" class="s_btn">음료</a>
+
+    </li>
+</ul>
+
+
+
+
+
+
+
+<ul class="slide">
+                            <li>
+                                <img src="/img/sec02_logo01.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+
+                                <div class="hover">
+                                    <img src="/img/sec02_logo01.png" alt="">
+                                    <p>빙그레 건강 tft의 <br /> 단백질 전문 브랜드</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/img/sec02_logo02.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+                                <div class="hover">
+                                    <img src="/img/sec02_logo02.png" alt="">
+                                    <p>부담없는 캐주얼한 커피</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/img/sec02_logo03.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+                                <div class="hover">
+                                    <img src="/img/sec02_logo03.png" alt="">
+                                    <p>39년 전통의 <br />대한민국 heritage</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/img/sec02_logo04.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+                                <div class="hover">
+                                    <img src="/img/sec02_logo04.png" alt="">
+                                    <p>대한민국을 대표하는<br />No.1 가공우유</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/img/sec02_logo05.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+                                <div class="hover">
+                                    <img src="/img/sec02_logo05.png" alt="">
+                                    <p>진한 맛의 감동<br />프리미엄 아이스크림</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/img/sec02_logo06.png" alt="">
+                                <a href="#" class="buy">구입하기</a>
+                                <div class="hover">
+                                    <img src="/img/sec02_logo06.png" alt="">
+                                    <p>남자를 위한 건강 플랜<br />마노플랜</p>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+
+
+                        
+<style>
+    .sec03 .slider1 .slide {
+        overflow: hidden;
+    }
+
+    .sec03 .slider1 .slide li {
+        /* 가로크기 %, 세로는 px */
+        height: 249px;
+        border: 1px solid #edecef;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s;
+    }
+
+    .sec03 .slider1 .slide li > img {
+        display: block;
+    }
+
+    .sec03 .slider1 .slide .buy {
+        position: absolute;
+        left: 50%; bottom: 10px;
+        transform: translateX(-50%);
+        height: 43px; line-height: 43px;
+        width: 90%;
+        border-radius: 21.5px;
+        text-align: center;
+        background-color: #e82c28;
+        color: #fff;
+        display: none;
+    }
+
+    .sec03 .slider1 .slide .hover {
+        position: absolute;
+        width: 100%; height: 100%;
+        top: -100%; left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        /* display: none; */
+        /* 대신 li에 overflow:hidden; */
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .sec03 .slider1 .slide .hover > img {
+        transform: scale(0.8);
+        display: block;
+        /* margin-bottom: 30px; */
+        margin: 0 auto 30px;
+    }
+    
+    .sec03 .slider1 .slide .hover p {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .sec03 .slider1 .slide .hover p::before {
+        content: '';
+        position: absolute;
+        left: 50%; top: -25px;
+        transform: translateX(-50%);
+        width: 20%; height: 2px;
+        background-color: #ccc;
+    }
+
+    .sec03 .slider1 .slide li:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 40px rgba(0, 0, 0, .1);
+    }
+
+    .sec03 .slider1 .slide li:hover > img {
+        display: none;
+    }
+    .sec03 .slider1 .slide li:hover .buy {
+        display: block;
+        z-index: 50;
+    }
+
+    .sec03 .slider1 .slide li:hover .hover {
+        display: block;
+        /* top:0; */
+        top:30px;
+        opacity: 1;
+    }
+
+</style>

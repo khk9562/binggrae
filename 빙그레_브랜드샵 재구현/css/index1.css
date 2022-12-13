@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+#bHeader {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.h_main,
+.h_sub {
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Header Main */
+.h_main {
+    justify-content: space-between;
+    height: 118px;
+}
+
+.h_main .logo {
+    width: 142px; 
+}
+
+.h_main .logo a {
+    display: block;
+    height: 35px;
+    background: url(../img/logo-pc.png) center center no-repeat;
+}
+
+/* Header Main Gnb */
+
+.h_main .gnb .gnb_menu {
+    display: flex;
+
+}
+
+.h_main .gnb .gnb_menu > li {
+    padding-top:49px;
+    padding-right:80px;
+    position: relative;
+}
+
+.h_main .gnb .gnb_menu > li > a {
+    display: block;
+    font-size: 20px;
+    height: 70px;
+    background-color: aqua;
+}
+
+/* Header Sub */
+.h_sub {
+    justify-content: end;
+
+}
+.h_sub > a {
+    display: block;
+    background: url(../img/link_arrow02.png) center right no-repeat;
+    padding-right: 17px;
+    margin: 0 7px;
+    position: relative;
+    font-size: 14px;
+    height: 30px; line-height: 30px;
+}
+
+.h_sub > a:first-child:after {
+    content: '';
+    width: 1px; height: 10px;
+    background-color: #222;
+    position: absolute;
+    top: 50%; right: -8px;
+    transform: translateY(-50%);
+}
+
+

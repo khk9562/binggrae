@@ -1,0 +1,682 @@
+@charset "UTF-8";
+
+
+/* Header */
+    #bingHeader {
+        width: 100%; /* 위드 없으면 포지션 픽스드 줬을 때 컨텐츠 없어서 다 사라짐 */
+        background-color: #fff;
+        position: fixed;
+        left: 0; top: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        z-index: 100;
+    }
+
+    .h_main,
+    .h_sub {
+        border-bottom: 1px solid #e7e7e7;
+        padding:0 80px;
+        display: flex;
+        align-items: center;
+    }
+
+/* Header Main */
+    .h_main {
+        height: 116px;
+        justify-content: space-between;
+    }
+
+    .h_main .logo {
+        width: 142px;
+    }
+
+    .h_main .logo a {
+        display: block;
+        height: 35px;
+        background: url(../img/logo-pc.png) no-repeat;
+    }
+
+/* Header Main GNB */
+
+    .h_main .gnb .gnb_list {
+        display: flex;
+    }
+
+    .h_main .gnb .gnb_list > li {
+        padding-top: 47px;
+        padding-right: 80px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+    }
+
+
+    .h_main .gnb .gnb_list > li > a {
+        display: block;
+        font-size: 20px;
+        height: 68px; /* padding-bottom: 48px; */
+        position: relative;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+
+    .h_main .gnb .gnb_list > li:hover > a::before {
+        content: '';
+        width: 6px; height: 6px;
+        border-radius: 100%;
+        background-color: #ed1c24;
+        position: absolute;
+        right: -10px; top: 0;
+    }
+
+    .h_main .gnb .gnb_list > li:hover > a::after {
+        content: '';
+        width: 100%; height: 2px;
+        background-color: #ed1c24;
+        position: absolute;
+        left: 0; bottom: 0;
+    }
+
+
+/* Header Main GNB Sub */
+    .h_main .gnb .gnb_list .gnb_sub {
+        position: absolute;
+        left: 0; top:100%;
+        width: 100%;
+        background-color: #fff;
+        padding-top: 20px;
+        display: none;
+    }
+
+
+    .h_main .gnb .gnb_list .gnb_sub li a {
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        color:#1f1f1f;
+        font-weight: 300;
+        transition: all .3s ease-in-out;
+    }
+
+    .h_main .gnb .gnb_list .gnb_sub li:hover > a {
+        color: #ed1c24;
+    }
+
+    .h_main .gnb .gnb_list .gnb_sub li:hover .gnb_sub {
+        display: block;
+    }
+
+
+/* Header Sub */
+    .h_sub {
+        height: 31px;
+        justify-content: flex-end;
+    }
+
+    .h_sub .h_sub_menu {
+        display: flex;
+        font-size: 14px;
+    }
+
+    .h_sub .h_sub_menu li {
+        padding: 0 12px;
+        position: relative;
+    }
+
+    .h_sub .h_sub_menu li:last-child {
+        padding-left: 10px;
+        padding-right: 0;
+    }
+
+    .h_sub .h_sub_menu li a {
+        display: block;
+        background-color: #c00;
+        height: 30px; line-height: 30px;
+        padding-right: 19px;
+        background: url(../img/link_arrow02.png) right center no-repeat;
+    }
+
+    .h_sub .h_sub_menu li:first-child::after {
+        content: '';
+        width: 2px; height: 8px;
+        background-color: #f2f2f2;
+        position: absolute;
+        top: 50%; right: 0;
+        transform: translateY(-50%);
+    }
+
+
+
+/* header main 언어선택 */
+    .h_main .etc {
+        display: flex;
+        align-items: center;
+    }
+
+    .h_main .etc .lang {
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .h_main .etc .lang > a {
+        display: block;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0;
+        height: 30px; line-height: 30px;
+        background: url(../img/lang_btn.png) 30px center no-repeat;
+        padding-right: 32px;
+    }
+
+    .h_main .etc .lang .lang_sub {
+        position: absolute;
+        top:100%; left: 0;
+        width: 53px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+        display: none;
+    }
+
+    .h_main .etc .lang .lang_sub li a {
+        display: block;
+        text-align: center;
+        height: 30px; line-height: 30px;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    .h_main .etc .lang:hover .lang_sub {
+        display: block;
+    }
+
+
+/* header main 햄버거메뉴 */
+    .h_main .etc .ham {
+        width: 26px;
+        position: relative;
+    }
+
+    .h_main .etc .ham::before {
+        content: '';
+        width: 100%; height: 2px;
+        background-color: #000;
+        position: absolute;
+        left: 0; top: 50%;
+        margin-top: -1px;
+    }
+
+    .h_main .etc .ham a {
+        display: block;
+        height: 22px;
+        position: relative;
+    }
+
+    .h_main .etc .ham a:before,
+    .h_main .etc .ham a:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%; height: 2px;
+        background-color: #000;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .h_main .etc .ham a:before {
+        top:0;
+    }
+
+    .h_main .etc .ham a:after {
+        bottom:0;
+    }
+
+
+/* hover 햄버거 X자 만들기 */
+    .h_main .etc .ham:hover::before {
+        content: none;
+    }
+
+    .h_main .etc .ham:hover > a::before {
+        left: 0; top: 50%;
+        margin-top: -1px;
+        transform: rotate(45deg);
+    }
+    .h_main .etc .ham:hover > a::after {
+        left: 0; bottom: 50%;
+        margin-bottom: -1px;
+        transform: rotate(-45deg);
+    }
+
+
+
+/* Main Section */
+
+
+
+/* Main Section 01 */
+    .sec01 {
+        padding: 180px 0;
+        background: url(../img/section01_bg.png) center center/cover no-repeat;
+    }
+
+    .sec01 .visual {
+        max-width: 1508px;
+        margin: 0 auto 40px;
+    }
+
+    .sec01 .visual img {
+        width: 100%;
+
+    }
+
+    .sec01 .search {
+        max-width: 1020px;
+        margin: 0 auto 25px;
+        padding: 0 125px;
+
+    }
+
+    .sec01 .search .inner {
+        width: 100%;
+        height: 80px;
+        border-radius: 40px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+        padding: 0 15px 0 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff url(../img/search_icon.png) 2rem center no-repeat;
+
+
+    }
+
+    .sec01 .search .inner input {
+        width: 77%;
+        height: 100%;
+        border: none;
+        font-size: 17px;
+        
+    }
+
+    .sec01 .search .inner input:focus {
+        outline: none;
+    }
+
+
+    .sec01 .search .inner button {
+        border: none;
+        background-color: #e82d28;
+        width: 19.3333%; height: 55%;
+        border-radius: 27px;
+        color: #fff;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .3) inset;
+        font-size: 14px;
+        letter-spacing: 1;
+    }
+
+
+    .sec01 .search .hash_txt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+
+    }
+
+    .sec01 .search .hash_txt li {
+        width: 120px; height: 37px;
+    }
+
+    .sec01 .search .hash_txt li a {
+        display: block;
+        background-color: transparent;
+        width: 7rem;
+        height: 37px; line-height: 35px;
+        text-align: center;
+        border-radius: 20px;
+        border: 1px solid #edecef;
+        margin-right: 7px;
+        font-size: 12px;
+        letter-spacing: 0.1px;
+    }
+
+
+/* Main Section */
+    .main_sec {
+        margin-bottom: 170px;
+
+    }
+    .main_sec .sec_tit {
+        font-family: 'Jua';
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 47px;
+    }
+
+
+/* Main Section02 Slide */
+    .main_sec .outer {
+        max-width: 1650px;
+        padding: 0 54px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .main_sec .slidebox {
+        width: 100%;
+    }
+
+
+    /* section 02 slide */
+
+    .sec02 .slide img {
+        width: 100%;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .sec02 .slide a {
+        display: block;
+        background-color: #f9f9f9;
+        width: 242px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 22px;
+        text-align: center;
+    }
+
+    .custom-prev,
+    .custom-next{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px; height: 20px;
+    }
+
+    .custom-prev {
+        left: -45px;
+        background: url(../img/prev_arrow.png) center center no-repeat;
+
+    }
+
+    .custom-next {
+        right: -45px;
+        background: url(../img/next_arrow.png) center center no-repeat;
+    }
+
+/* section 02 slick-slide */
+    .slick-slide {
+        margin: 0 9px;
+        transition: transform 0.5s ease-in-out;
+        padding-top: 20px;
+    }
+
+    .slick-list {
+        margin: 0 -9px;
+    }
+
+    .slick-slider {
+        overflow: hidden;
+    }
+
+    .slick-slide:hover {
+        transform: translateY(-20px);
+    }
+
+
+/* section 03 Slide */
+.sec03 .slider1 .slide {
+    overflow: hidden;
+
+}
+
+.sec03 .slider1 .slide .imgbox {
+    width: 242px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1) inset;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+
+
+.sec03 .slider1 .slide .hoverBox {
+    width: 242px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1) inset;
+    display: none;
+
+
+}
+
+.sec03 .slider1 .slide .hoverBox .buy {
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 43px; line-height: 43px;
+    width: 90%;
+    border-radius: 21.5px;
+    text-align: center;
+    background-color: #e82c28;
+    color: #fff;
+    display: none;
+}
+
+
+
+.sec03 .slider1 .slide .hoverBox img {
+    transform: scale(0.8);
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.sec03 .slider1 .slide .hoverBox p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    position: relative;
+}
+
+.sec03 .slider1 .slide .hoverBox p::before {
+    content: '';
+    position: absolute;
+    left: 50%; top: -25px;
+    transform: translateX(-50%);
+    width: 20%; height: 2px;
+    background-color: #ccc;
+}
+
+/* section03 slick-slider */
+.sec03 .container1 {
+    position: relative;
+    background-color: #c00;
+}
+
+
+.custom-prev1,
+.custom-next1 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; height: 20px;
+}
+
+.custom-prev1 {
+    left: -45px;
+    background: url(../img/prev_arrow.png) center center no-repeat;
+}
+
+.custom-next1 {
+    right: -45px;
+    background: url(../img/next_arrow.png) center center no-repeat;
+}
+
+
+/* section04 */
+/* 고객문의 및 불편사항 */
+    .csbox {
+        max-width: 1310px;
+        padding: 90px 45px 60px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        margin: 0 auto;
+    }
+
+    .csbox .cstop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 46px;
+    }
+
+    .csbox .cstop .cs_cont {
+        flex: none;
+        width: 48.5245%;
+        height: 325px;
+        border-radius: 25px;
+        padding: 56px 45px 0;
+    }
+
+    .csbox .cstop .email {
+        background: url(../img/sec04_backimg01.png) right center no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .csbox .cstop .phone {
+        background: url(../img/sec04_backimg02.png) right center no-repeat;
+        background-size: cover;
+    }
+
+    .csbox .cstop .cs_cont .cs_tit {
+        font-family: 'Jua';
+        font-size: 32px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .csbox .cstop .cs_cont .cs_tit p {
+        margin-bottom: 14px;
+    }
+
+    .csbox .cstop .email a {
+        position: absolute;
+        bottom:0; left: 0;
+        width: 180px; height: 50px;
+        border-radius: 25px;
+        background-color: #e82c28;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 63px;
+        margin-left: 48px;
+    }
+
+    .csbox .cstop .phone .p_number {
+        font-size: 45px;
+        font-family: 'Jua';
+        margin-bottom: 28px;
+    }
+
+    .csbox .cstop .phone span {
+        color: #e82c28;
+        margin-left: 15px;
+    }
+
+    /* csbottom */
+    .csbottom {
+        position: relative;
+    }
+
+    .csbottom .cs_tit {
+        font-family: 'Jua';
+        font-size: 25px;
+        height: 50px;
+        line-height: 1;
+        margin-bottom: 27px;
+        width: 73%;
+    }
+
+    .csbottom .faq {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .csbottom .faq li {
+        flex: none;
+        width: 48.5245%;
+        background-color: #f9f9f9;
+        border-radius: 30px;
+        height: 80px;
+        box-shadow: 0 3px 5px rgba(128, 128, 128, .3) inset;
+
+    }
+
+    .csbottom .faq li:nth-child(-n+4) {
+        margin-bottom: 10px;
+    }
+
+    .csbottom .faq li > a {
+        display: block;
+        height: 80px;
+        line-height: 80px;
+        padding: 0 20px;
+        font-size: 18px;
+        position: relative;
+    }
+
+    .csbottom .faq li > a::before {
+        content: '';
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background: #e0462e url(../img/link_arrow01.png) center center no-repeat;
+        position: absolute;
+        right: 20px; top: 50%;
+        transform: translateY(-50%) scale(0);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .3) inset;
+        transition: all .4s ease-in-out;
+    }
+
+    .csbottom .more {
+        display: block;
+        width: 160px;
+        height: 43px;
+        border: 1px solid #f1f1f1;
+        border-radius: 21.5px;
+        line-height: 43px;
+        text-align: center;
+        position: absolute;
+        top: -10px; right: 0;
+        font-size: 14px;
+    }
+
+    .csbottom .faq li:hover > a::before {
+        transform: translateY(-50%) scale(1);
+    }
+
+    .csbottom .more:hover {
+        background-color: #e82c28;
+        color: #fff;
+        border: none;
+    }
+
+
+/* Footer */
+    #bingFooter {
+        
+    }
